@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragmentBottomMenu">
+
+    <fragment
+        android:id="@+id/fragmentBottomMenu"
+        android:name="com.example.flexvision.fragment.FragmentBottomMenu"
+        android:label="@string/flex_vision"
+        tools:layout="@layout/fragment_bottom_menu">
+        <action
+            android:id="@+id/action_fragmentBottomMenu_to_fragmentNewVideo"
+            app:destination="@id/fragmentNewVideo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentNewVideo"
+        android:name="com.example.flexvision.fragment.FragmentNewVideo"
+        android:label="@string/new_video"
+        tools:layout="@layout/fragment_new_video" />
+</navigation>
