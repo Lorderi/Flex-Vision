@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.example.flexvision.R
 import com.example.flexvision.databinding.CardVideoBinding
 import com.example.flexvision.model.Video
@@ -14,6 +15,7 @@ class VideosAdapter(
 ) : ListAdapter<Video, VideoViewHolder>(VideoDiffCallback()) {
     interface VideoListener {
         fun onDeleteClicked(video: Video)
+        fun onVideoClicked(video: Video)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoViewHolder {
@@ -37,6 +39,13 @@ class VideosAdapter(
                     }
                 }
                 show()
+            }
+        }
+
+        binding.root.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onVideoClicked(getItem(position))
             }
         }
 

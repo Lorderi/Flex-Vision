@@ -17,24 +17,24 @@ class FragmentBottomMenu : Fragment() {
     ): View {
         val binding = FragmentBottomMenuBinding.inflate(inflater, container, false)
 
-//        val videoClickListener = View.OnClickListener {
-//            findNavController()
-//                .navigate(R.id.action_fragmentBottomMenu_to_fragmentNewVideo)
-//        }
+        val videoClickListener = View.OnClickListener {
+            findNavController()
+                .navigate(R.id.action_fragmentBottomMenu_to_fragmentNewVideo)
+        }
 
         val navController =
             requireNotNull(childFragmentManager.findFragmentById(R.id.container)).findNavController()
 
-//        navController.addOnDestinationChangedListener { _, destination, _ ->
-//            when (destination.id) {
-//                R.id.fragmentVideos -> {
-//                    binding.addVideo.setOnClickListener(videoClickListener)
-//                    binding.addVideo.animate()
-//                        .scaleX(1F)
-//                        .scaleY(1F)
-//                }
-//            }
-//        }
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.fragmentVideos -> {
+                    binding.addVideo.setOnClickListener(videoClickListener)
+                    binding.addVideo.animate()
+                        .scaleX(1F)
+                        .scaleY(1F)
+                }
+            }
+        }
 
         binding.bottomMenu.setupWithNavController(navController)
 

@@ -8,11 +8,11 @@ import kotlinx.coroutines.flow.update
 
 class InMemoryVideoRepository : VideoRepository {
     private val state = MutableStateFlow(
-        List(20) {
+        List(10) {
             Video(
                 id = it.toLong() + 1L,
-                videoName = "№${it + 1L}  Yappie name",
-                authorName = "Artemiy Bokov",
+                name = "№${it + 1L}  Yappie name",
+                author = "Artemiy Bokov",
                 date = "25.03.2024 17:00",
             )
         }
@@ -27,7 +27,21 @@ class InMemoryVideoRepository : VideoRepository {
         }
     }
 
-    override fun saveVideo(videoId: Long, name: String) {
-        // TODO
+    override fun saveVideo(videoId: Long, name: String, description: String, videoUrl: String) {
+        state.update { videos ->
+            buildList(capacity = videos.size + 1) {
+                add(
+                    Video(
+                        id = ++nextId,
+                        name = name,
+                        description = description,
+                        uploadUrl = videoUrl
+                    )
+                )
+                addAll(videos)
+            }
+        }
     }
+
+    override fun getById(id: Long) = state.value.filter { it.id == id }[0]
 }

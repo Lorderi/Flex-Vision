@@ -6,5 +6,6 @@ import kotlinx.coroutines.flow.Flow
 interface VideoRepository {
     fun getVideos(): Flow<List<Video>>
     fun deleteById(id: Long)
-    fun saveVideo(videoId: Long, name: String)
+    fun saveVideo(videoId: Long, name: String, description: String, videoUrl: String)
+    fun getById(id: Long): Video
 }

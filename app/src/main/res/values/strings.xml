@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">FlexVision</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="preview">Preview</string>
     <string name="videos_menu">Videos</string>
@@ -10,4 +9,8 @@
     <string name="add_video">Add Video</string>
     <string name="flex_vision">Flex Vision</string>
     <string name="new_video">New video</string>
+    <string name="video_name">Name</string>
+    <string name="video_description">Description</string>
+    <string name="video_upload">Upload</string>
+    <string name="player">Flex Player</string>
 </resources>

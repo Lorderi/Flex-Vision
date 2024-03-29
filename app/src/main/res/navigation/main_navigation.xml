@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_fragmentBottomMenu_to_fragmentNewVideo"
             app:destination="@id/fragmentNewVideo" />
+        <action
+            android:id="@+id/action_fragmentBottomMenu_to_fragmentPlayer"
+            app:destination="@id/fragmentPlayer" />
     </fragment>
 
     <fragment
@@ -20,4 +23,9 @@
         android:name="com.example.flexvision.fragment.FragmentNewVideo"
         android:label="@string/new_video"
         tools:layout="@layout/fragment_new_video" />
+    <fragment
+        android:id="@+id/fragmentPlayer"
+        android:name="com.example.flexvision.fragment.FragmentPlayer"
+        android:label="@string/player"
+        tools:layout="@layout/fragment_player" />
 </navigation>

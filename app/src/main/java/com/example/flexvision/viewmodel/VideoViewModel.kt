@@ -27,4 +27,9 @@ class VideoViewModel(private val repository: VideoRepository) : ViewModel() {
     fun deleteById(id: Long) {
         repository.deleteById(id)
     }
+
+    //  TODO
+    //    fun getById(id: Long) {
+    //        repository.getById(id)
+    //    }
 }

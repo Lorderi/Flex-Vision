@@ -10,10 +10,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp">
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:layout_marginBottom="@dimen/common_spacing">
 
         <ImageView
             android:id="@+id/preview"
@@ -29,9 +29,9 @@
 
         <ImageView
             android:id="@+id/avatar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="@dimen/biggest_spacing"
+            android:layout_height="@dimen/biggest_spacing"
+            android:layout_marginTop="@dimen/common_spacing"
             android:adjustViewBounds="true"
             android:contentDescription="@string/preview"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/common_spacing"
             android:ellipsize="end"
             android:maxLines="1"
             app:layout_constraintBottom_toTopOf="@id/nameOffset"
@@ -66,7 +66,7 @@
         <Space
             android:id="@+id/nameOffset"
             android:layout_width="wrap_content"
-            android:layout_height="4dp"
+            android:layout_height="@dimen/smallest_spacing"
             app:layout_constraintBottom_toTopOf="@id/author"
             app:layout_constraintStart_toEndOf="@id/avatar"
             app:layout_constraintTop_toBottomOf="@id/name" />
@@ -75,7 +75,7 @@
             android:id="@+id/author"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/common_spacing"
             android:ellipsize="end"
             android:maxLines="1"
             app:layout_constraintBottom_toTopOf="@id/authorOffset"
@@ -88,7 +88,7 @@
         <Space
             android:id="@+id/authorOffset"
             android:layout_width="wrap_content"
-            android:layout_height="4dp"
+            android:layout_height="@dimen/smallest_spacing"
             app:layout_constraintBottom_toTopOf="@id/date"
             app:layout_constraintStart_toEndOf="@id/avatar"
             app:layout_constraintTop_toBottomOf="@id/author" />
@@ -97,18 +97,21 @@
             android:id="@+id/date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/common_spacing"
             app:layout_constraintBottom_toBottomOf="@id/avatar"
             app:layout_constraintStart_toEndOf="@id/avatar"
             app:layout_constraintTop_toBottomOf="@id/authorOffset"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@id/menu"
             app:layout_constraintWidth="0dp"
             tools:text="24.03.24 11:12" />
 
         <ImageView
             android:id="@+id/menu"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="@dimen/biggest_spacing"
+            android:layout_height="@dimen/biggest_spacing"
+            android:layout_marginTop="@dimen/common_spacing"
             android:contentDescription="@string/menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
